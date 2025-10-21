@@ -7,6 +7,11 @@ public class Player : Character
         base.Initialize(100); //set health for player
     }
 
+    void Update()
+    {
+        
+    }
+
     public void OnHitWith(Enemy enemy)
     {
 

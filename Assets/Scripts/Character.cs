@@ -16,7 +16,11 @@ public abstract class Character : MonoBehaviour
     //initialize character
     public void Initialize(int startHealth)
     {
+        Health = startHealth;
+        Debug.Log($"{this.name} initialized with {this.Health} health");
 
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     //Behavior
@@ -24,6 +28,7 @@ public abstract class Character : MonoBehaviour
     {
         Health -= damage;
         Debug.Log($"{this.name} takes damage {damage}. Current Health : {Health}");
+
         IsDead();
     }
 
