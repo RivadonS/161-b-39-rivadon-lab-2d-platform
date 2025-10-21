@@ -9,19 +9,18 @@ public class Player : Character
 
     void Update()
     {
-        
+
     }
 
     public void OnHitWith(Enemy enemy)
     {
-
+        TakeDamage(enemy.DamageHit);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         Enemy enemy = collision.gameObject.GetComponent<Enemy>();
         if (enemy != null) {
-            Debug.Log($"{this.name} Hit with {enemy.name}!");
             OnHitWith(enemy);
         }
     }

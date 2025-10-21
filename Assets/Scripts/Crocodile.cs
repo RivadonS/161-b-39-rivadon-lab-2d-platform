@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Crocodile : Enemy
 {
-    [SerializeField] private float atkRange;
+    [SerializeField]  float atkRange;
     public Player player;
 
     void Start()
@@ -12,17 +12,17 @@ public class Crocodile : Enemy
 
         //set atk range and target
         atkRange = 6.0f;
-        player = GameObject.FindObjectOfType<Player>();
+        player = GameObject.FindFirstObjectByType<Player>();
     }
 
     public void FixedUpdate()
     {
-        Behavior();
+        
     }
     
     public void Update()
     {
-
+        Behavior();
     }
 
     public override void Behavior()

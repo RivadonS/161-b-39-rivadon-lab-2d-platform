@@ -18,7 +18,7 @@ public class Ant : Enemy
     {
         Behavior();
     }
-    
+
     public void Update()
     {
         
