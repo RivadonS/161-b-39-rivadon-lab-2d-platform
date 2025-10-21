@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class Ant : Enemy
 {
-    public Vector2 velocity;
+    [SerializeField] Vector2 velocity;
     public Transform[] movePoints;
 
     void Start()
     {
-        
+        base.Initialize(20);
+        DamageHit = 20;
+
+        //set speed and direction of movement
+        velocity = new Vector2(-1.0f, 0.0f); //move left first
     }
 
     void Update()
