@@ -7,6 +7,11 @@ public class Crocodile : Enemy
         base.Initialize(50); //set health for crocodile
     }
 
+    void Update()
+    {
+        
+    }
+
     public override void Behavior()
     {
         throw new System.NotImplementedException();

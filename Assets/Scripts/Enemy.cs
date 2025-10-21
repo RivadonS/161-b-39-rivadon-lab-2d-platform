@@ -12,4 +12,8 @@ public abstract class Enemy : Character
     {
         
     }
+    void Update()
+    {
+        
+    }
 }

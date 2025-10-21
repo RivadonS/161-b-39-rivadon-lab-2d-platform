@@ -10,6 +10,11 @@ public class Ant : Enemy
         
     }
 
+    void Update()
+    {
+        
+    }
+
     public override void Behavior()
     {
         throw new System.NotImplementedException();
