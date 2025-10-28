@@ -7,13 +7,29 @@ public abstract class Weapon : MonoBehaviour
 
     public abstract void Move();
     public abstract void OnHitWith(Character character);
-    void Start()
+
+    public void InitWeapon(int newDamage, IShootable newShooter)
     {
-        
+        damage = newDamage;
+        Shooter = newShooter;
     }
 
-    void Update()
+    public int GetShooterDirection()
     {
-        
+        float value = Shooter.ShootPoint.position.x - Shooter.ShootPoint.parent.position.x;
+
+        if (value > 0) return 1; //face right
+        else return -1; //face left
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Character character = other.GetComponent<Character>();
+
+        if (character != null)
+        {
+            OnHitWith(other.GetComponent<Character>());
+            Destroy(this.gameObject, 5f);
+        }
     }
 }
