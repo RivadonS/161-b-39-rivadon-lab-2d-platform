@@ -1149,7 +1149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 582605869}
   m_Layer: 0
-  m_Name: CoSpawnPoint
+  m_Name: CrocSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3497,6 +3497,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atkRange: 0
   player: {fileID: 0}
+  <Bullet>k__BackingField: {fileID: 115806, guid: 40466c5ac40024bbca1e4b144cdf43c2, type: 3}
+  <ShootPoint>k__BackingField: {fileID: 582605869}
 --- !u!4 &1798490034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 448308, guid: c07db661138134f589f46b8510d57c9a, type: 3}
@@ -3746,6 +3748,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d988e949b6468664b95a17eabf463e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Bullet>k__BackingField: {fileID: 182108, guid: a5638a192258f4059b0e074542d33fbc, type: 3}
+  <ShootPoint>k__BackingField: {fileID: 1253158031}
+  <ReloadTime>k__BackingField: 0
+  <WaitTime>k__BackingField: 0
 --- !u!4 &1827418555 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 485146, guid: 6dde6029886a24408b05eced6b5964a6, type: 3}

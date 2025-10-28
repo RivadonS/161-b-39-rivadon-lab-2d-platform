@@ -14,12 +14,12 @@ public class Player : Character, IShootable
         WaitTime = 0.0f;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         WaitTime += Time.fixedDeltaTime;
     }
 
-    void Update()
+    private void Update()
     {
         Shoot();
     }
@@ -35,7 +35,7 @@ public class Player : Character, IShootable
                 banana.InitWeapon(20, this);
             }
 
-            WaitTime = 0.0f;
+            WaitTime = 0.0f; //reset waitTime
         }
     }
 
