@@ -1,7 +1,11 @@
 using UnityEngine;
+using System;
 
 public abstract class Character : MonoBehaviour
 {
+    public int MaxHealth { get; protected set; }
+    public event Action<int, int> OnHealthChanged;
+
     //attributes
     private int health;
     public int Health
@@ -16,11 +20,14 @@ public abstract class Character : MonoBehaviour
     //initialize character
     public void Initialize(int startHealth)
     {
+        MaxHealth = startHealth;
         Health = startHealth;
         Debug.Log($"{this.name} initialized with {this.Health} health");
 
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        OnHealthChanged?.Invoke(Health, MaxHealth);
     }
 
     //Behavior
@@ -28,6 +35,8 @@ public abstract class Character : MonoBehaviour
     {
         Health -= damage;
         Debug.Log($"{this.name} takes damage {damage}. Current Health : {Health}");
+
+        OnHealthChanged?.Invoke(Health, MaxHealth);
 
         IsDead();
     }
